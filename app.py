@@ -8,7 +8,10 @@ from peft import PeftModel
 # HF token from environment
 token = os.environ.get("HF_TOKEN")
 if token:
+    print("HF TOKEN FOUND AND LOADING....")
     login(token)
+else:
+    print("NO HF TOKEN FOUND!")
 
 # Model & adapter
 base_id = "mistralai/Mistral-7B-Instruct-v0.2"
